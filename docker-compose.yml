@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  node-pokedex:
+    # Nom du container
+    container_name: node-pokedex
+
+    # Ports
+    ports:
+      - "800:5001"
+
+    # Image à charger dans le container
+    # https://hub.docker.com/_/node
+    image: node:latest
+
+    # Volumes
+    volumes:
+      - ./app:/app
+
+    # Répertoire de travail
+    working_dir: /app
+
+    # Commande à lancer
+    command: node index.js
